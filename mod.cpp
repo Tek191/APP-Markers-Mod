@@ -1,0 +1,16 @@
+name = "APP6 Markers";
+picture = "";
+actionName = "Visit UCA";
+action = "https://units.arma3.com/unit/universalcombinedarms";
+logo = "app6.paa";
+logoSmall = "app6small.paa"
+logoOver = "app6.paa";
+tooltip = "APP6 Markers";
+tooltipOwned = "";
+author = "Tek";
+overview = "Adds non-scaling APP6 markers.";
+overviewPicture = "";
+overviewText = "";
+overviewFootnote = "";
+hideName	= 0;	// Hide the extension name
+hidePicture	= 0;	// Hide the extension menu

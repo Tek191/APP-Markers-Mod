@@ -26,6 +26,12 @@ switch (playerSide) do {
 };
 if (_invisibleToPlayer) exitWith {};
 
+private _iconColour = BLACK;
+private _iconColourCustom = _module getVariable ["iconColourCustom", "[]"];
+if (_iconColourCustom isNotEqualTo "[]") then {
+	_iconColour = parseSimpleArray _iconColourCustom;
+};
+
 private _iconType = _module getVariable ["iconType", ""];
 private _markerName = _module getVariable ["markerName", ""];
 private _iconWidth = _module getVariable ["iconWidth", ""];
@@ -40,4 +46,4 @@ private _iconTextPosition = _module getVariable ["iconTextPosition", ""];
 _iconType = ICON_DIRECTORY + _iconType; //paa's for this module are within the mod
 
 waitUntil {!isNil "APP6_markerArray"};
-APP6_markerArray pushBack [_iconType, _markerName, BLACK, _iconWidth, _iconHeight, _iconRotation, _iconText, _iconTextShadow, _iconTextSize, _iconTextFont, _iconTextPosition];
+APP6_markerArray pushBack [_iconType, _markerName, _iconColour, _iconWidth, _iconHeight, _iconRotation, _iconText, _iconTextShadow, _iconTextSize, _iconTextFont, _iconTextPosition];

@@ -34,6 +34,10 @@ APP6_markerArray <ELEMENT:ARRAY>
 */
 APP6_markerArray = [];
 
+APP6_showMarkers = true; /*Used to toggle markers through the briefing tabs*/
+
+call APP6_fnc_addAPP6Briefing;
+
 if (!didJIP) then {call APP6_fnc_drawImagesAsIconsInBriefing;}; /*Prevent JIPs from being stuck in waitUntil on briefing*/
 
 [] spawn {

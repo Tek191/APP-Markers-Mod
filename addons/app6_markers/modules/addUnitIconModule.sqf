@@ -36,7 +36,12 @@ private _fileSideName = UNIT_ICON_DIRECTORY; //paa's for this module are all wit
 switch (_module getVariable ["iconSide", ""]) do {
 	case 0: {_iconColour = [0.49, 0.88, 1, 1]; _fileSideName = _fileSideName + "blufor_";}; 
 	case 1: {_iconColour = [1, 0.5, 0.5, 1]; _fileSideName = _fileSideName + "opfor_";}; 
+	case 2: {_iconColour = [0.67, 1, 0.67, 1]; _fileSideName = _fileSideName + "greenfor_";}; 
 	default {_iconColour = [0.49, 0.88, 1, 1]; _fileSideName = _fileSideName + "blufor_";};
+};
+private _iconColourCustom = _module getVariable ["iconColourCustom", "[]"];
+if (_iconColourCustom isNotEqualTo "[]") then {
+	_iconColour = parseSimpleArray _iconColourCustom;
 };
 
 /*SET IF UNIT REDUCED/REINFORCED*/

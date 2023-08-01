@@ -1,7 +1,6 @@
 /*
 Module for adding custom paa's. This module only has B/O/G/C colours selectable.
 */
-
 private _module = _this select 0;
 
 /*If icon is not supposed to be visible to player it is not added to APP6_markerArray*/
@@ -26,7 +25,16 @@ if (_invisibleToPlayer) exitWith {};
 private _fileInMissionFolder = _module getVariable ["fileInMissionFolder", ""];
 private _fileName = _module getVariable ["fileName", ""];
 private _markerName = _module getVariable ["markerName", ""];
-private _iconColour = parseSimpleArray (_module getVariable ["iconColour", ""]); //Array input is STRING so converts STRING -> ARRAY
+
+private _iconColour = [];
+private _iconColourCustom = _module getVariable ["iconColourCustom", "[]"];
+if (_iconColourCustom isNotEqualTo "[]") then {
+	_iconColour = parseSimpleArray _iconColourCustom;
+} 
+else {
+	_iconColour = parseSimpleArray (_module getVariable ["iconColour", ""]); //Array input is STRING so converts STRING -> ARRAY
+};
+
 private _iconWidth = _module getVariable ["iconWidth", ""];
 private _iconHeight = _module getVariable ["iconHeight", ""];
 private _iconRotation = _module getVariable ["iconRotation", ""];

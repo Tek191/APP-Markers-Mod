@@ -26,6 +26,7 @@ class CfgFunctions {
     class APP6 {
         class functions {
             file = "\APP6\functions";
+            class addAPP6Briefing {};
 			class main {postInit = 1;};
 			class drawImagesAsIconsInBriefing {};
 			class drawImagesAsIconsIngame {};
@@ -99,6 +100,12 @@ class CfgVehicles {
                     class GREENFOR {name = "GREENFOR"; value = [0.67, 1, 0.67, 1];};
                     class UNKNOWN {name = "UNKNOWN"; value = [1, 1, 0.5, 1];};
                 };
+            };
+            class iconColourCustom {
+                displayName = "Icon Side Custom (Optional)";
+                description = "Overwrites Icon Side - [Red, Green, Blue, Alpha] where each value is 0-1 inclusively. Leave as [] otherwise.";
+                typeName = "ARRAY";
+                defaultValue = "[]";                
             };
             class iconVisibleBLUFOR {
                 displayName = "Is the icon visible to BLUFOR?";
@@ -316,6 +323,12 @@ class CfgVehicles {
                     };
                 };
             };
+            class iconColourCustom {
+                displayName = "Icon Custom (Optional)";
+                description = "Overwrites the default colour of Black - [Red, Green, Blue, Alpha] where each value is 0-1 inclusively. Leave as [] otherwise.";
+                typeName = "ARRAY";
+                defaultValue = "[]";                
+            };
             class iconVisibleBLUFOR {
                 displayName = "Is the icon visible to BLUFOR?";
                 description = "Changes visibility for BLUFOR.";
@@ -428,7 +441,17 @@ class CfgVehicles {
                         name =  "OPFOR";
                         value = 1;
                     };
+                    class GREENFOR {
+                        name =  "GREENFOR";
+                        value = 2;
+                    };
                 };
+            };
+            class iconColourCustom {
+                displayName = "Icon Side Custom (Optional)";
+                description = "Overwrites the default colour of the Icon Side - [Red, Green, Blue, Alpha] where each value is 0-1 inclusively. Leave as [] otherwise.";
+                typeName = "ARRAY";
+                defaultValue = "[]";                
             };
             class iconType {
                 displayName = "Icon Type";
@@ -509,6 +532,10 @@ class CfgVehicles {
                     class COMPANY {
                         name =  "COMPANY";
                         value = "company";
+                    };
+                    class BATTALION {
+                        name =  "BATTALION";
+                        value = "battalion";
                     };
                 };
             };

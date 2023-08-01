@@ -19,20 +19,22 @@ RETURNS:
 waitUntil {DISPLAY_EXISTS;};
 
 SPECTATOR_MAP ctrlAddEventHandler ["Draw", {
-	{
-		(_this # 0) drawIcon [
-			MARKER_DIRECTORY,
-			MARKER_COLOUR, 
-			MARKER_POSITION,
-			MARKER_SIZE_X,
-			MARKER_SIZE_Y,
-			MARKER_ROTATION, 
-			MARKER_TEXT, 
-			MARKER_TEXT_SHADOW,
-			MARKER_TEXT_SIZE, 
-			MARKER_TEXT_FONT, 
-			MARKER_TEXT_POSITION];
-	} forEach APP6_markerArray;
+	if (APP6_showMarkers) then {
+		{
+			(_this # 0) drawIcon [
+				MARKER_DIRECTORY,
+				MARKER_COLOUR, 
+				MARKER_POSITION,
+				MARKER_SIZE_X,
+				MARKER_SIZE_Y,
+				MARKER_ROTATION, 
+				MARKER_TEXT, 
+				MARKER_TEXT_SHADOW,
+				MARKER_TEXT_SIZE, 
+				MARKER_TEXT_FONT, 
+				MARKER_TEXT_POSITION];
+		} forEach APP6_markerArray;			
+	};
 }];
 
 waitUntil {!(DISPLAY_EXISTS)};

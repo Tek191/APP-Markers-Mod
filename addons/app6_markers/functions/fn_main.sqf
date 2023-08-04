@@ -1,5 +1,5 @@
 /*
-Does not run on dedicated server or headless client.
+Does not run on dedicated server or headless client or in singleplayer.
 Adds Event Handlers to manage:
 -Briefing map
 -Ingame map
@@ -14,9 +14,8 @@ RETURNS:
 	None
 */
 
-#define NO_DEFINED_MARKERS count APP6_markerArray isEqualTo 0
-
-if (!hasInterface) exitWith {};
+/*Requires multiplayer to not crash mods and game settings in (BI/ACE) Arsenal/SP without Briefing due to APP6_fnc_addAPP6Briefing*/
+if (!hasInterface || {!isMultiplayer}) exitWith {};
 
 /*
 APP6_markerArray <ELEMENT:ARRAY>
